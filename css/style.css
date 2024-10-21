@@ -11901,3 +11901,17 @@ hr {
 .card.widget-toc {
   overflow: visible;
 }
+.post-navigation a.article-nav-prev,
+.post-navigation a.article-nav-next {
+  color: #fff !important;
+}
+.post-navigation i.fas {
+  color: #fff !important;
+}
+table {
+  border-color: #666 !important;
+}
+th,
+td {
+  border-color: #666 !important;
+}
