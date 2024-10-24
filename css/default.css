@@ -12312,6 +12312,19 @@ body.night .admonition {
   border-radius: 0.3rem;
   box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.5), 0 0 0.05rem rgba(0,0,0,0.7);
 }
+body.night .admonition.success,
+body.night .admonition.note {
+  background-color: rgba(66,185,131,0.2);
+  border-color: #42b983;
+}
+body.night .admonition.success .admonition-title,
+body.night .admonition.note .admonition-title {
+  background-color: rgba(66,185,131,0.2);
+}
+body.night .admonition.success .admonition-title ::before,
+body.night .admonition.note .admonition-title ::before {
+  background-color: #42b983;
+}
 body.night .admonition-title {
   background-color: rgba(66,185,131,0.2);
   color: #fff;
@@ -12849,6 +12862,19 @@ body.night .cc-window .cc-btn:hover {
     border-left: 0.3rem solid #42b983;
     border-radius: 0.3rem;
     box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.5), 0 0 0.05rem rgba(0,0,0,0.7);
+  }
+  body:not(.light) .admonition.success,
+  body:not(.light) .admonition.note {
+    background-color: rgba(66,185,131,0.2);
+    border-color: #42b983;
+  }
+  body:not(.light) .admonition.success .admonition-title,
+  body:not(.light) .admonition.note .admonition-title {
+    background-color: rgba(66,185,131,0.2);
+  }
+  body:not(.light) .admonition.success .admonition-title ::before,
+  body:not(.light) .admonition.note .admonition-title ::before {
+    background-color: #42b983;
   }
   body:not(.light) .admonition-title {
     background-color: rgba(66,185,131,0.2);
