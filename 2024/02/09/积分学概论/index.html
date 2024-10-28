@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>积分学概论 - KoSaking&#039;s blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="KoSaking&#039;s blog"><meta name="msapplication-TileImage" content="/img/nene.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="KoSaking&#039;s blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="阅读前提示   本文所有理论来源为同济大学数学系主编的《高等数学》第七版教材. 出于复习需要，本文仅收录较为重要的，或容易遗忘的性质、定理与公式等. 若存在错误或表达不规范之处，请通过邮箱联系加以指正."><meta property="og:type" content="blog"><meta property="og:title" content="积分学概论"><meta property="og:url" content="http://blog.kksk.tech/2024/02/09/%E7%A7%AF%E5%88%86%E5%AD%A6%E6%A6%82%E8%AE%BA/"><meta property="og:site_name" content="KoSaking&#039;s blog"><meta property="og:description" content="阅读前提示   本文所有理论来源为同济大学数学系主编的《高等数学》第七版教材. 出于复习需要，本文仅收录较为重要的，或容易遗忘的性质、定理与公式等. 若存在错误或表达不规范之处，请通过邮箱联系加以指正."><meta property="og:locale" content="en_US"><meta property="og:image" content="http://blog.kksk.tech/gallery/cover/inoue_takina-cover.png"><meta property="article:published_time" content="2024-02-09T11:28:40.000Z"><meta property="article:modified_time" content="2024-10-28T15:34:17.532Z"><meta property="article:author" content="KoSaking"><meta property="article:tag" content="math"><meta property="article:tag" content="function"><meta property="article:tag" content="derivative"><meta property="article:tag" content="differential"><meta property="article:tag" content="integral"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://blog.kksk.tech/gallery/cover/inoue_takina-cover.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://blog.kksk.tech/2024/02/09/%E7%A7%AF%E5%88%86%E5%AD%A6%E6%A6%82%E8%AE%BA/"},"headline":"积分学概论","image":["http://blog.kksk.tech/gallery/cover/inoue_takina-cover.png"],"datePublished":"2024-02-09T11:28:40.000Z","dateModified":"2024-10-28T15:34:17.532Z","author":{"@type":"Person","name":"KoSaking"},"publisher":{"@type":"Organization","name":"KoSaking's blog","logo":{"@type":"ImageObject","url":{"text":"","light":"/img/logo.svg","dark":"/img/logo-dark.svg"}}},"description":"阅读前提示   本文所有理论来源为同济大学数学系主编的《高等数学》第七版教材. 出于复习需要，本文仅收录较为重要的，或容易遗忘的性质、定理与公式等. 若存在错误或表达不规范之处，请通过邮箱联系加以指正."}</script><link rel="canonical" href="http://blog.kksk.tech/2024/02/09/%E7%A7%AF%E5%88%86%E5%AD%A6%E6%A6%82%E8%AE%BA/"><link rel="icon" href="/img/nene.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><link rel="dns-prefetch" href="https://blog.kksk.tech/"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head><body class="is-3-column"><canvas id="universe"></canvas><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img class="logo-img" src="/img/logo.svg" alt="KoSaking&#039;s blog" height="28"><img class="logo-img-dark" src="/img/logo-dark.svg" alt="KoSaking&#039;s blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item night" id="night-nav" title="Dark Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/gallery/cover/inoue_takina-cover.png" alt="积分学概论"></span></div><article class="card-content article" role="article"><h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal"><i class="fas fa-angle-double-right"></i>积分学概论</h1><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2024-02-09T11:28:40.000Z" title="2024-02-09T11:28:40.000Z">2024-02-09</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-10-28T15:34:17.532Z" title="2024-10-28T15:34:17.532Z">2024-10-28</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/math/">math</a><span> / </span><a class="link-muted" href="/categories/note/">note</a></span><span class="level-item"><i class="far fa-clock"></i> an hour read (About 6680 words)</span></div></div><div class="content"><div class="admonition info">
+<div class="admonition-title">阅读前提示</div>
+<div style="margin-top: .8rem">
+<ul>
+<li>本文所有理论来源为同济大学数学系主编的《高等数学》第七版教材.</li>
+<li>出于复习需要，本文仅收录较为重要的，或容易遗忘的性质、定理与公式等.</li>
+<li>若存在错误或表达不规范之处，请通过邮箱联系加以指正.</li>
+</ul>
+</div>
+</div>
+<span id="more"></span>
+
+<h2 id="不定积分"><a href="#不定积分" class="headerlink" title="不定积分"></a>不定积分</h2><h3 id="不定积分的性质与积分表"><a href="#不定积分的性质与积分表" class="headerlink" title="不定积分的性质与积分表"></a>不定积分的性质与积分表</h3><p><strong>连续函数一定有原函数.</strong></p>
+<p>在基本积分表中，需要重点关注以下积分公式：</p>
+<ol>
+<li>$\displaystyle\int\dfrac{\text{d}x}{x}&#x3D;\ln|\,x\,|+C$；</li>
+<li>$\displaystyle\int\dfrac{\text{d}x}{\cos^2 x}&#x3D;\int\sec^2 x&#x3D;\tan x+C$；</li>
+<li>$\displaystyle\int\dfrac{\text{d}x}{\sin^2 x}&#x3D;\int\csc^2 x\text{d}x&#x3D;-\cot x+C$；</li>
+<li>$\displaystyle\int\dfrac{\sin x}{\cos^2 x}\text{d}x&#x3D;\int\sec x\tan x\text{d}x&#x3D;\sec x+C$；</li>
+<li>$\displaystyle\int\dfrac{\cos x}{\sin^2 x}\text{d}x&#x3D;\int\csc x\cot x\text{d}x&#x3D;-\csc x+C$.</li>
+</ol>
+<p>此外需要补充一些积分公式：</p>
+<ol>
+<li>$\displaystyle\int\sec x\text{d}x&#x3D;\ln|\,\sec x+\tan x\,|+C$；</li>
+<li>$\displaystyle\int\csc x\text{d}x&#x3D;\ln|\,\csc x-\cot x\,|+C$；</li>
+<li>$\displaystyle\int\dfrac{\text{d}x}{x^2+a^2}&#x3D;\dfrac{1}{a}\arctan\dfrac{x}{a}+C$；</li>
+<li>$\displaystyle\int\dfrac{\text{d}x}{x^2-a^2}&#x3D;\dfrac{1}{2a}\ln\left|\,\dfrac{x-a}{x+a}\,\right|+C$；</li>
+<li>$\displaystyle\int\dfrac{\text{d}x}{\sqrt{a^2-x^2}}&#x3D;\arcsin\dfrac{x}{a}+C$；</li>
+<li>$\displaystyle\int\dfrac{\text{d}x}{\sqrt{x^2+a^2}}&#x3D;\ln\,(\,x+\sqrt{x^2+a^2}\,)+C$；</li>
+<li>$\displaystyle\int\dfrac{\text{d}x}{\sqrt{x^2-a^2}}&#x3D;\ln|\,x+\sqrt{x^2-a^2}\,|+C$.</li>
+</ol>
+<p>若被积函数中含有高次三角函数，且不能直接利用上述积分公式时，考虑通过<strong>拆项</strong>或<strong>使用倍角公式降幂</strong>的方式解决.</p>
+<h3 id="第一类换元积分法"><a href="#第一类换元积分法" class="headerlink" title="第一类换元积分法"></a>第一类换元积分法</h3><p>本质公式为</p>
+<p>$$<br>\displaystyle\int f(\varphi(x))\varphi&#39;(x)\text{d}x&#x3D;\int f(\varphi(x))\text{d}\varphi(x)&#x3D;F(\varphi(x))+C<br>$$</p>
+<p>关键之处在于寻找（凑项）一个函数扮演 $\varphi(x)$ 的角色.</p>
+<h3 id="第二类换元积分法"><a href="#第二类换元积分法" class="headerlink" title="第二类换元积分法"></a>第二类换元积分法</h3><p>通常以<strong>三角换元</strong>的方式解决带有根号的被积函数问题.</p>
+<blockquote>
+<p>例：求 $\displaystyle\int\dfrac{\text{d}x}{\sqrt{x^2+a^2}}$ 的值（$a&gt;0$）.</p>
+<p>解：设 $x&#x3D;a\tan t$，其中 $-\dfrac{\pi}{2}&lt;t&lt;\dfrac{\pi}{2}$，根据三角公式 $\tan^2 t+1&#x3D;\sec^2 t$，有</p>
+<p>$$<br>\sqrt{x^2+a^2}&#x3D;\sqrt{a^2\cdot(\tan^2 t+1)}&#x3D;a\sec t<br>$$</p>
+<p>此时 $\text{d}x&#x3D;a\sec^2 t\text{d}t$，故</p>
+<p>$$<br>\begin{aligned}<br>    \displaystyle\text{原式}&#x3D;\int\dfrac{a\sec^2 t}{a\sec t}&amp;&#x3D;\int\sec t\text{d}t\\\\<br>    &amp;&#x3D;\ln|\,\sec t+\tan t\,|+C\\\\<br>    &amp;&#x3D;\ln\left|\,\dfrac{\sin t+1}{\cos t}\,\right|+C\\\\<br>    &amp;&#x3D;\ln\left|\,\dfrac{\left(\dfrac{x+\sqrt{x^2+a^2}}{\sqrt{x^2+a^2}}\right)}{\left(\dfrac{a}{\sqrt{x^2+a^2} }\right)}\,\right|+C\\\\<br>    &amp;&#x3D;\ln\,(\,x+\sqrt{x^2+a^2}\,)+C _1<br>\end{aligned}<br>$$</p>
+<p>其中 $C _1&#x3D;C-\ln a$.</p>
+</blockquote>
+<h3 id="分部积分法"><a href="#分部积分法" class="headerlink" title="分部积分法"></a>分部积分法</h3><p>设函数 $u&#x3D;u(x)$ 和 $v&#x3D;v(x)$ 具有连续导数，则有</p>
+<p>$$<br>\displaystyle\int u\text{d}v&#x3D;uv-\int v\text{d}u<br>$$</p>
+<p>在函数 $w(x)&#x3D;u(x)v(x)$ 中，对于 $v(x)$，我们选择的优先级<strong>从小到大</strong>依次为“<strong>反对幂指三</strong>”或“<strong>反对幂三指</strong>”：</p>
+<ol>
+<li>“反对幂指三”分别指反三角函数、对数函数、幂函数、指数函数和三角函数；</li>
+<li>指数函数和三角函数的优先级相同，具体问题具体分析.</li>
+</ol>
+<blockquote>
+<p>例：求 $\displaystyle\int x\cos x\text{d}x$ 的值.</p>
+<p>解：由于三角函数的优先级高于幂函数，故令 $v(x)&#x3D;\cos x$，则有</p>
+<p>$$<br>\begin{aligned}<br>    \displaystyle\text{原式}&amp;&#x3D;\int x\text{d}\sin x\\\\<br>    &amp;&#x3D;x\sin x-\int\sin x\text{d}x\\\\<br>    &amp;&#x3D;x\sin x+\cos x+C<br>\end{aligned}<br>$$</p>
+</blockquote>
+<p>有时候需要使用<strong>两次</strong>分部积分法后<strong>解方程</strong>，才能求出所给的积分式的值.</p>
+<h3 id="有理函数的积分"><a href="#有理函数的积分" class="headerlink" title="有理函数的积分"></a>有理函数的积分</h3><p>通常使用<strong>待定系数法</strong>解决.</p>
+<blockquote>
+<p>例：求 $\displaystyle\int\dfrac{x^2+1}{(x+2)(x+1)^2}\text{d}x$ 的值.</p>
+<p>解：设 $\dfrac{x^2+1}{(x+2)(x+1)^2}&#x3D;\dfrac{A}{x+2}+\dfrac{B}{x+1}+\dfrac{C}{(x+1)^2}$，则有</p>
+<p>$$<br>A(x+1)^2+B(x+1)(x+2)+C(x+2)&#x3D;x^2+1<br>$$</p>
+<p>令系数分别对应相等有</p>
+<p>$$<br>\begin{cases}<br>    A+B&#x3D;1\\\\<br>    2A+3B+C&#x3D;0\\\\<br>    A+2B+2C&#x3D;1<br>\end{cases}<br>$$</p>
+<p>解得</p>
+<p>$$<br>\begin{cases}<br>   A&#x3D;5\\\\<br>   B&#x3D;-4\\\\<br>   C&#x3D;2<br>\end{cases}<br>$$</p>
+<p>故</p>
+<p>$$<br>\begin{aligned}<br>   \displaystyle\text{原式}&amp;&#x3D;\int\left(\dfrac{5}{x+2}-\dfrac{4}{x+1}+\dfrac{2}{(x+1)^2}\right)\text{d}x\\\\<br>   &amp;&#x3D;5\int\dfrac{1}{x+2}\text{d}(x+2)-4\int\dfrac{1}{x+1}\text{d}(x+1)+2\int\dfrac{1}{(x+1)^2}\text{d}(x+1)\\\\<br>   &amp;&#x3D;5\ln|\,x+2\,|-4\ln|\,x+1\,|-\dfrac{2}{x+1}+C<br>\end{aligned}<br>$$</p>
+</blockquote>
+<hr>
+<h2 id="定积分"><a href="#定积分" class="headerlink" title="定积分"></a>定积分</h2><h3 id="定积分的概念与性质"><a href="#定积分的概念与性质" class="headerlink" title="定积分的概念与性质"></a>定积分的概念与性质</h3><p>若函数 $f(x)$ 在 $[\,a,b\,]$ 上的定积分存在，则称 $f(x)$ 在 $[\,a,b\,]$ 上<strong>可积</strong>.</p>
+<p>若函数 $f(x)$ 在 $[\,a,b\,]$ 上<strong>连续</strong>，则其在该区间上可积.</p>
+<p>若函数 $f(x)$ 在 $[\,a,b\,]$ 上<strong>有界</strong>且仅有<strong>有限个间断点</strong>，则其同样也在该区间上可积.</p>
+<blockquote>
+<p><strong>可积不一定连续.</strong></p>
+</blockquote>
+<p><strong>定积分中值定理</strong>：若函数 $f(x)$ 在 $[\,a,b\,]$ 上连续，则有</p>
+<p>$$<br>\begin{aligned}<br>    &amp;\exists\,\xi\in(\,a,b\,)\\\\<br>    s.t.\qquad &amp;\displaystyle\int _b^af(x)\text{d}x&#x3D;f(\xi)(b-a)<br>\end{aligned}<br>$$</p>
+<h3 id="积分变限函数"><a href="#积分变限函数" class="headerlink" title="积分变限函数"></a>积分变限函数</h3><p>形如</p>
+<p>$$<br>\displaystyle\int _{\psi(x)}^{\varphi(x)}f(t)\text{d}t<br>$$</p>
+<p>的函数称为<strong>积分变限函数</strong>，其导数为</p>
+<p>$$<br>\displaystyle\left[\,\int _{\psi(x)}^{\varphi(x)}f(t)\text{d}t\,\right]&#39;&#x3D;f(\varphi(x))\varphi&#39;(x)-f(\psi(x))\psi&#39;(x)<br>$$</p>
+<blockquote>
+<p>可通过口诀“<strong>上代上导减下代下导</strong>”记住该公式.</p>
+</blockquote>
+<h3 id="定积分的换元法"><a href="#定积分的换元法" class="headerlink" title="定积分的换元法"></a>定积分的换元法</h3><p>设函数 $f(x)$ 在区间 $[\,a,b\,]$ 上连续，且函数 $x&#x3D;\varphi(t)$ 满足条件：</p>
+<ol>
+<li>$\varphi(\alpha)&#x3D;a$，$\varphi(\beta)&#x3D;b$；</li>
+<li>$\varphi(t)$ 在 $[\,\min(\alpha,\beta),\max(\alpha,\beta)\,]$ 上具有连续导数，且值域 $R _\varphi&#x3D;[\,a,b\,]$.</li>
+</ol>
+<p>则有</p>
+<p>$$<br>\displaystyle\int _a^bf(x)\text{d}x&#x3D;\int _\alpha^\beta f(\varphi(t))\varphi&#39;(t)\text{d}t<br>$$</p>
+<h3 id="定积分的分部积分法"><a href="#定积分的分部积分法" class="headerlink" title="定积分的分部积分法"></a>定积分的分部积分法</h3><p>和不定积分的分部积分法类似，公式为</p>
+<p>$$<br>\displaystyle\int _a^b u\text{d}v&#x3D;(uv)\bigg| _a^b-\int _a^bv\text{d}u<br>$$</p>
+<h3 id="反常积分"><a href="#反常积分" class="headerlink" title="反常积分"></a>反常积分</h3><h4 id="无穷限的反常积分"><a href="#无穷限的反常积分" class="headerlink" title="无穷限的反常积分"></a>无穷限的反常积分</h4><p>形如</p>
+<p>$$<br>\displaystyle\int _a^{+\infty}f(x)\text{d}x,\,\int _{-\infty}^bf(x)\text{d}x,\,\int _{-\infty}^{+\infty}f(x)\text{d}x<br>$$</p>
+<p>的积分称为<strong>无穷限的反常积分</strong>.</p>
+<p>以无穷上限反常积分为例，其计算方法为</p>
+<p>$$<br>\displaystyle\int _a^{+\infty}f(x)\text{d}x&#x3D;\lim\limits _{t\to+\infty}\int _a^tf(t)\text{d}t<br>$$</p>
+<p>若该极限存在，则称积分 $\displaystyle\int _a^{+\infty}f(x)\text{d}x$ 是<strong>收敛的</strong>，否则称其为<strong>发散的</strong>.</p>
+<h4 id="无界函数的反常积分"><a href="#无界函数的反常积分" class="headerlink" title="无界函数的反常积分"></a>无界函数的反常积分</h4><p>若函数 $f(x)$ 在点 $a$ 的<strong>任意一个邻域内都无界</strong>，则称 $a$ 为 $f(x)$ 的<strong>瑕点</strong>.</p>
+<p>无界函数的反常积分也称为<strong>瑕积分</strong>.</p>
+<p>设函数 $f(x)$ 在 $(\,a,b\,]$ 上连续，点 $a$ 为 $f(x)$ 的瑕点，则该区间的瑕积分的计算方法为</p>
+<p>$$<br>\displaystyle\int _a^bf(x)\text{d}x&#x3D;\lim\limits _{t\to a^+}\int _t^bf(x)\text{d}x<br>$$</p>
+<p>左闭右开区间的瑕积分计算方法与之同理.</p>
+<p>瑕积分的收敛性定义与无穷限的反常积分收敛性的定义类似，在此不再赘述.</p>
+<hr>
+<h2 id="定积分的应用"><a href="#定积分的应用" class="headerlink" title="定积分的应用"></a>定积分的应用</h2><h3 id="平面图形的面积"><a href="#平面图形的面积" class="headerlink" title="平面图形的面积"></a>平面图形的面积</h3><h4 id="直角坐标系情况"><a href="#直角坐标系情况" class="headerlink" title="直角坐标系情况"></a>直角坐标系情况</h4><p>通常的要求是求<strong>由两个函数图象围成的图形的面积</strong>，较为简单，根据实际情况选用 X 型区域和 Y 型区域解决即可.</p>
+<h4 id="极坐标系情况"><a href="#极坐标系情况" class="headerlink" title="极坐标系情况"></a>极坐标系情况</h4><p>通常的要求是求<strong>极坐标曲线 $\rho&#x3D;\rho(\theta)$ 与极轴或与自身等围成的图形的面积</strong>：</p>
+<ol>
+<li>考察极径扫过很小的一个角 $\text{d}\theta$ 时所形成的扇形的面积为<br>$$<br>\text{d}A&#x3D;\dfrac{1}{2}[\,\rho(\theta)\,]^2\text{d}\theta<br>$$</li>
+<li>在给定的区间（假设 $[\,\alpha,\beta\,]$ 为极径扫过的角的范围）上积分，即可得到此图形的面积为<br>$$<br>\displaystyle A&#x3D;\int _\alpha^\beta\dfrac{1}{2}[\,\rho(\theta)\,]^2\text{d}\theta<br>$$</li>
+</ol>
+<h3 id="旋转体的体积"><a href="#旋转体的体积" class="headerlink" title="旋转体的体积"></a>旋转体的体积</h3><p>通常的要求是求<strong>一段曲线对应的 X 型（或 Y 型）曲边梯形绕 $x$ 轴（或 $y$ 轴）旋转所形成的旋转体的体积</strong>.</p>
+<p>以绕 $x$ 轴旋转为例，计算方法为：</p>
+<ol>
+<li>考察自变量的很小的一个增量 $\text{d}x$ 对应的曲线段绕 $x$ 轴旋转所形成的圆柱体的体积为<br> $$<br> \text{d}V&#x3D;\pi y^2\text{d}x<br> $$</li>
+<li>在给定的区间（假设 $[\,a,b\,]$ 为 $x$ 的取值范围）上积分，即可得到此旋转体的体积为<br> $$<br> \displaystyle V&#x3D;\int _a^b\pi y^2\text{d}x<br> $$</li>
+</ol>
+<p>同理，曲线绕 $y$ 轴旋转所形成的旋转体的体积为</p>
+<p>$$<br>\displaystyle V&#x3D;\int _c^d\pi x^2\text{d}y<br>$$</p>
+<p>其中 $y\in[\,c,d\,]$.</p>
+<h3 id="截面面积已知的立体的体积"><a href="#截面面积已知的立体的体积" class="headerlink" title="截面面积已知的立体的体积"></a>截面面积已知的立体的体积</h3><p>此处的“截面”指的是一系列的平行截面.</p>
+<p>设截面面积函数为 $A(x)$，积分区间为 $[\,a,b\,]$，则所求立体的体积为</p>
+<p>$$<br>\displaystyle V&#x3D;\int _a^b A(x)\text{d}x<br>$$</p>
+<h3 id="平面曲线的弧长"><a href="#平面曲线的弧长" class="headerlink" title="平面曲线的弧长"></a>平面曲线的弧长</h3><p><strong>光滑曲线弧是可求弧长的.</strong></p>
+<h4 id="参数方程情况"><a href="#参数方程情况" class="headerlink" title="参数方程情况"></a>参数方程情况</h4><p>若曲线弧由参数方程</p>
+<p>$$<br>\begin{cases}<br>    x&#x3D;\varphi(t)\\\\<br>    y&#x3D;\psi(t)<br>\end{cases}<br>\qquad (\alpha\leqslant t\leqslant\beta)<br>$$</p>
+<p>给出，且 $\varphi(t),\,\psi(t)$ 在 $[\,\alpha,\beta\,]$ 上具有连续导数，$\varphi&#39;(t),\,\psi&#39;(t)$ 不同时为零，则所求弧长为</p>
+<p>$$<br>\displaystyle s&#x3D;\int _\alpha^\beta\sqrt{[\,\varphi&#39;(t)\,]^2+[\,\psi&#39;(t)\,]^2}\text{d}t<br>$$</p>
+<h4 id="直角坐标系情况-1"><a href="#直角坐标系情况-1" class="headerlink" title="直角坐标系情况"></a>直角坐标系情况</h4><p>若曲线弧由直角坐标方程</p>
+<p>$$<br>y&#x3D;f(x)\qquad (a\leqslant x\leqslant b)<br>$$</p>
+<p>给出，且 $f(x)$ 在 $[\,a,b\,]$ 上具有一阶连续导数，则所求弧长为</p>
+<p>$$<br>\displaystyle s&#x3D;\int _a^b\sqrt{1+(y&#39;)^2}\text{d}x<br>$$</p>
+<h4 id="极坐标系情况-1"><a href="#极坐标系情况-1" class="headerlink" title="极坐标系情况"></a>极坐标系情况</h4><p>若曲线弧由极坐标方程</p>
+<p>$$<br>\rho&#x3D;\rho(\theta)\qquad (\alpha\leqslant\theta\leqslant\beta)<br>$$</p>
+<p>给出，且 $\rho(\theta)$ 在 $[\,\alpha,\beta\,]$ 上具有连续导数，则所求弧长为</p>
+<p>$$<br>\displaystyle s&#x3D;\int _\alpha^\beta\sqrt{\rho^2(\theta)+[\,\rho&#39;(\theta)\,]^2}\text{d}\theta<br>$$</p>
+<hr>
+<h2 id="重积分"><a href="#重积分" class="headerlink" title="重积分"></a>重积分</h2><h3 id="二重积分的性质"><a href="#二重积分的性质" class="headerlink" title="二重积分的性质"></a>二重积分的性质</h3><ol>
+<li>若闭区域 $D$ 被有限条曲线分为有限个部分闭区域，则在 $D$ 上的二重积分等于在各部分闭区域上的二重积分的和，即<br> $$<br> \displaystyle\iint\limits _{D}f(x,y)\text{d}x\text{d}y&#x3D;\iint\limits _{D _1}f(x,y)\text{d}x\text{d}y+\iint\limits _{D _2}f(x,y)\text{d}x\text{d}y<br> $$</li>
+<li><strong>中值定理</strong>：设函数 $f(x,y)$ 在闭区域 $D$ 上连续，$\sigma$ 是 $D$ 的面积，则在 $D$ 上至少存在一点 $(\xi,\eta)$，使得<br> $$<br> \displaystyle\iint\limits _{D}f(x,y)\text{d}\sigma&#x3D;f(\xi,\eta)\cdot\sigma<br> $$</li>
+</ol>
+<h3 id="二重积分的计算"><a href="#二重积分的计算" class="headerlink" title="二重积分的计算"></a>二重积分的计算</h3><h4 id="直角坐标系情况-2"><a href="#直角坐标系情况-2" class="headerlink" title="直角坐标系情况"></a>直角坐标系情况</h4><ol>
+<li><p>若积分区域 $D$ 以 $X$ 型区域形式表示为<br> $$<br> \begin{cases}<br> a\leqslant x\leqslant b\\\\<br> \varphi _1(x)\leqslant y\leqslant\varphi _2(x)<br> \end{cases}<br> $$</p>
+<p> 则有</p>
+<p> $$<br> \displaystyle\iint\limits _{D}f(x,y)\text{d}\sigma&#x3D;\int _a^b\text{d}x\int _{\varphi _1(x)}^{\varphi _2(x)}f(x,y)\text{d}y<br> $$</p>
+</li>
+<li><p>若积分区域 $D$ 以 $Y$ 型区域形式表示为<br> $$<br> \begin{cases}<br> c\leqslant y\leqslant d\\\\<br> \psi _1(y)\leqslant x\leqslant\psi _2(y)<br> \end{cases}<br> $$</p>
+<p> 则有</p>
+<p> $$<br> \displaystyle\iint\limits _{D}f(x,y)\text{d}\sigma&#x3D;\int _c^d\text{d}y\int _{\psi _1(y)}^{\psi _2(y)}f(x,y)\text{d}x<br> $$</p>
+</li>
+</ol>
+<h4 id="极坐标情况"><a href="#极坐标情况" class="headerlink" title="极坐标情况"></a>极坐标情况</h4><p>若积分区域 $D$ 以极坐标形式表示为</p>
+<p>$$<br>\begin{cases}<br>    \alpha\leqslant\theta\leqslant\beta\\\\<br>    \varphi _1(\theta)\leqslant\rho\leqslant\varphi _2(\theta)<br>\end{cases}<br>$$</p>
+<p>则有</p>
+<p>$$<br>\begin{aligned}<br>    \displaystyle\iint\limits _{D}f(x,y)\text{d}x\text{d}y&amp;&#x3D;\iint\limits _{D}f(\rho\cos\theta,\rho\sin\theta)\cdot\rho\text{d}\rho\text{d}\theta\\\\<br>    &amp;&#x3D;\int _\alpha^\beta\text{d}\theta\int _{\varphi _1(\theta)}^{\varphi _2(\theta)}f(\rho\cos\theta,\rho\sin\theta)\cdot\rho\text{d}\rho<br>\end{aligned}<br>$$</p>
+<p>当积分区域为<strong>圆或圆环</strong>时，使用极坐标计算二重积分较为合适.</p>
+<h3 id="三重积分的计算"><a href="#三重积分的计算" class="headerlink" title="三重积分的计算"></a>三重积分的计算</h3><p>对三重积分可以如此理解：在二重积分几何意义的基础上，若该曲顶柱体的密度不均匀，则其质量即为三重积分的值.</p>
+<p>三重积分的计算方法为：</p>
+<ol>
+<li>将待积分的<strong>闭区域</strong>投影于容易计算的平面上，<strong>并写出投影区域的点集形式</strong>；</li>
+<li>根据积分区域的特点选用不同的计算方式.</li>
+</ol>
+<h4 id="直角坐标系情况-3"><a href="#直角坐标系情况-3" class="headerlink" title="直角坐标系情况"></a>直角坐标系情况</h4><ol>
+<li><p><strong>先一重后二重</strong>：若积分区域 $\varOmega$ 可表示为<br> $$<br> \varOmega&#x3D;\{\,(x,y,z)\,|\,z _1(x,y)\leqslant z\leqslant z _2(x,y),\,(x,y)\in D _{xy}\,\}<br> $$</p>
+<p> 其中 $D _{xy}$ 是 $\varOmega$ 在平面 $xOy$ 上的投影，且</p>
+<p> $$<br> D _{xy}&#x3D;\{\,(x,y)\,|\,a\leqslant x\leqslant b,\,y _1(x)\leqslant y\leqslant y _2(x)\,\}<br> $$</p>
+<p> 则有</p>
+<p> $$<br> \begin{aligned}<br> \iiint\limits _{\varOmega}f(x,y,z)\text{d}v&amp;&#x3D;\iint\limits _{D _{xy}}\text{d}\sigma\int _{z _1(x,y)}^{z _2(x,y)}f(x,y,z)\text{d}z\\\\<br> &amp;&#x3D;\int _a^b\text{d}x\int _{y _1(x)}^{y _2(x)}\text{d}y\int _{z _1(x,y)}^{z _2(x,y)}f(x,y,z)\text{d}z<br> \end{aligned}<br> $$</p>
+</li>
+<li><p><strong>先二重后一重</strong>：若积分区域 $\varOmega$ 可表示为<br> $$<br> \varOmega&#x3D;\{\,(x,y,z)\,|\,(x,y)\in D _z,\,c _1\leqslant z\leqslant z _2\,\}<br> $$</p>
+<p> 其中 $D _z$ 是竖坐标为 $z$ 的平面截闭区域 $\varOmega$ 所得到的一个平面闭区域，则有</p>
+<p> $$<br> \iiint\limits _{\varOmega}f(x,y,z)\text{d}v&#x3D;\int _{c _1}^{c _2}\iint\limits _{D _z}f(x,y,z)\text{d}x\text{d}y<br> $$</p>
+</li>
+</ol>
+<h4 id="柱面坐标情况"><a href="#柱面坐标情况" class="headerlink" title="柱面坐标情况"></a>柱面坐标情况</h4><p>在平面 $xOy$ 上使用极坐标，但在竖直方向上仍使用直角坐标的坐标 $(\rho,\theta,z)$ 称为<strong>柱面坐标</strong>，其中</p>
+<p>$$<br>\begin{cases}<br>    0\leqslant\rho&lt;+\infty\\\\<br>    0\leqslant\theta\leqslant 2\pi\\\\<br>    -\infty&lt;z&lt;+\infty<br>\end{cases}<br>$$</p>
+<p>设 $F(\rho,\theta,z)&#x3D;f(\rho\cos\theta,\rho\sin\theta,z)$，则此时有</p>
+<p>$$<br>\iiint\limits _{\varOmega}f(x,y,z)\text{d}v&#x3D;\iiint\limits _{\varOmega}F(\rho,\theta,z)\cdot\rho\text{d}\rho\text{d}\theta\text{d}z<br>$$</p>
+<h4 id="球面坐标情况"><a href="#球面坐标情况" class="headerlink" title="球面坐标情况"></a>球面坐标情况</h4><p>设 $M(x,y,z)$ 为空间直角坐标系 $Oxyz$ 内的一点，点 $P$ 为点 $M$ 在平面 $xOy$ 上的投影，且有以下参数：</p>
+<ol>
+<li>$r$ 为向量 $\overrightarrow{OM}$ 的模；</li>
+<li>$\varphi$ 为向量 $\overrightarrow{OM}$ 与 $z$ 轴正向的夹角；</li>
+<li>$\theta$ 为向量 $\overrightarrow{OP}$ 与 $x$ 轴正向的夹角.</li>
+</ol>
+<p>则使用此三者的坐标称为<strong>球面坐标</strong>，其中</p>
+<p>$$<br>\begin{cases}<br>    0\leqslant r&lt;+\infty\\\\<br>    0\leqslant\varphi\leqslant\pi\\\\<br>    0\leqslant\theta\leqslant 2\pi<br>\end{cases}<br>$$</p>
+<p>显然，有关系</p>
+<p>$$<br>\begin{cases}<br>    x&#x3D;|\,OP\,|\cdot\cos\theta&#x3D;r\sin\varphi\cos\theta\\\\<br>    y&#x3D;|\,OP\,|\cdot\sin\theta&#x3D;r\sin\varphi\cos\theta\\\\<br>    z&#x3D;r\cos\varphi<br>\end{cases}<br>$$</p>
+<p>成立.</p>
+<p>设 $F(r,\varphi,\theta)&#x3D;f(r\sin\varphi\cos\theta,r\sin\varphi\cos\theta,r\cos\varphi)$，则使用球面坐标表示的三重积分的计算公式为</p>
+<p>$$<br>\iiint\limits _{\varOmega}f(x,y,z)\text{d}v&#x3D;\iiint\limits _{\varOmega}F(r,\varphi,\theta)\cdot r^2\sin\varphi\text{d}r\text{d}\varphi\text{d}\theta<br>$$</p>
+<h3 id="重积分的应用"><a href="#重积分的应用" class="headerlink" title="重积分的应用"></a>重积分的应用</h3><h4 id="曲面的面积"><a href="#曲面的面积" class="headerlink" title="曲面的面积"></a>曲面的面积</h4><p>设曲面 $S$ 的方程为 $z&#x3D;f(x,y)$，$D$ 为 $S$ 在平面 $xOy$ 上的投影，则 $S$ 的面积为</p>
+<p>$$<br>A&#x3D;\iint\limits _{D}\sqrt{1+[\,f _x&#39;(x,y)\,]^2+[\,f _y&#39;(x,y)\,]^2}\text{d}\sigma<br>$$</p>
+<h4 id="质心"><a href="#质心" class="headerlink" title="质心"></a>质心</h4><p>在平面 $xOy$ 上占有闭区域 $D$、密度为 $\mu(x,y)$ 的薄片的质心坐标为</p>
+<p>$$<br>\left(\dfrac{\displaystyle\iint\limits _{D}x\mu(x,y)\text{d}\sigma}{\displaystyle\iint\limits _{D}\mu(x,y)\text{d}\sigma},\dfrac{\displaystyle\iint\limits _{D}y\mu(x,y)\text{d}\sigma}{\displaystyle\iint\limits _{D}\mu(x,y)\text{d}\sigma}\right)<br>$$</p>
+<p>其中 $\mu(x,y)$ 在 $D$ 上连续.</p>
+<h4 id="转动惯量"><a href="#转动惯量" class="headerlink" title="转动惯量"></a>转动惯量</h4><ol>
+<li><p>在平面 $xOy$ 上占有闭区域 $D$、密度为 $\mu(x,y)$ 的平面薄片对于 $x$ 轴和 $y$ 轴的转动惯量分别为<br> $$<br> \begin{cases}<br> \displaystyle I _x&#x3D;\iint\limits _{D}y^2\mu(x,y)\text{d}\sigma\\\\<br> \displaystyle I _y&#x3D;\iint\limits _{D}x^2\mu(x,y)\text{d}\sigma<br> \end{cases}<br> $$</p>
+<p> 其中 $\mu(x,y)$ 在 $D$ 上连续.</p>
+</li>
+<li><p>占有空间有界闭区域 $\varOmega$、密度为 $\rho(x,y,z)$ 的物体对于三条坐标轴的转动惯量分别为<br> $$<br> \begin{cases}<br> \displaystyle I _x&#x3D;\iiint\limits _{\varOmega}(y^2+z^2)\rho(x,y,z)\text{d}v\\\\<br> \displaystyle I _y&#x3D;\iiint\limits _{\varOmega}(z^2+x^2)\rho(x,y,z)\text{d}v\\\\<br> \displaystyle I _z&#x3D;\iiint\limits _{\varOmega}(x^2+y^2)\rho(x,y,z)\text{d}v<br> \end{cases}<br> $$</p>
+<p> 其中 $\rho(x,y,z)$ 在 $\varOmega$ 上连续.</p>
+</li>
+</ol>
+<h4 id="引力"><a href="#引力" class="headerlink" title="引力"></a>引力</h4><p>占有空间有界闭区域 $\varOmega$、密度为 $\rho(x,y,z)$ 的物体对外部一拥有单位质量的质点 $P _0(x _0,y _0,z _0)$ 的引力为</p>
+<p>$$<br>\begin{aligned}<br>    \boldsymbol{F}&amp;&#x3D;(F _x,F _y,F _z)\\\\<br>    &amp;&#x3D;\left(\displaystyle\iiint\limits _{\varOmega}\dfrac{G\rho(x,y,z)(x-x _0)}{r^3}\text{d}v,\displaystyle\iiint\limits _{\varOmega}\dfrac{G\rho(x,y,z)(y-y _0)}{r^3}\text{d}v,\displaystyle\iiint\limits _{\varOmega}\dfrac{G\rho(x,y,z)(z-z _0)}{r^3}\text{d}v\right)<br>\end{aligned}<br>$$</p>
+<p>其中 $r$ 为物体与质点的距离，且 $\rho(x,y,z)$ 在 $\varOmega$ 上连续.</p>
+<hr>
+<h2 id="曲线积分与曲面积分"><a href="#曲线积分与曲面积分" class="headerlink" title="曲线积分与曲面积分"></a>曲线积分与曲面积分</h2><h3 id="对弧长的曲线积分"><a href="#对弧长的曲线积分" class="headerlink" title="对弧长的曲线积分"></a>对弧长的曲线积分</h3><p>对弧长的曲线积分又称为<strong>第一类曲线积分</strong>，用于计算线密度为变量的曲线弧的质量.</p>
+<p>设曲线弧 $L$ 在点 $(x,y)$ 处的线密度为 $f(x,y)$，则根据积分思想，其质量为</p>
+<p>$$<br>\displaystyle\int _Lf(x,y)\text{d}s&#x3D;\lim\limits _{\lambda\to 0}\sum\limits _{i&#x3D;1}^nf(\xi _i,\eta _i)\Delta s _i<br>$$</p>
+<p>其中 $\lambda$ 为各小弧段的长度的最大值.</p>
+<p>若曲线弧 $L$ 可分为两段光滑曲线弧 $L _1$ 和 $L _2$，则有</p>
+<p>$$<br>\displaystyle\int _{L _1+L _2}f(x,y)\text{d}s&#x3D;\int _{L _1}f(x,y)\text{d}s+\int _{L _2}f(x,y)\text{d}s<br>$$</p>
+<p>若曲线弧 $L$ 为闭曲线，则 $f(x,y)$ 在 $L$ 上对弧长的曲线积分记为 $\displaystyle\oint _Lf(x,y)\text{d}s$.</p>
+<p>设 $f(x,y)$ 在曲线弧 $L$ 上有定义且连续，而 $L$ 的参数方程为</p>
+<p>$$<br>\begin{cases}<br>    x&#x3D;\varphi(t)\\\\<br>    y&#x3D;\psi(t)<br>\end{cases}<br>\qquad (\alpha\leqslant t\leqslant\beta)<br>$$</p>
+<p>其中 $\varphi(t)$ 和 $\psi(t)$ 在 $[\,\alpha,\beta\,]$ 上具有一阶连续偏导数，$[\,\varphi&#39;(t)\,]^2+[\,\psi&#39;(t)\,]^2\neq 0$，则有</p>
+<p>$$<br>\displaystyle\int _Lf(x,y)\text{d}s&#x3D;\int _\alpha^\beta f[\,\varphi(t),\psi(t)\,]\cdot\sqrt{[\,\varphi&#39;(t)\,]^2+[\,\psi&#39;(t)\,]^2}\text{d}t<br>$$</p>
+<blockquote>
+<p>注意，上述计算公式<strong>必须</strong>满足 $\alpha&lt;\beta$.</p>
+</blockquote>
+<h3 id="对坐标的曲线积分"><a href="#对坐标的曲线积分" class="headerlink" title="对坐标的曲线积分"></a>对坐标的曲线积分</h3><p>对坐标的曲线积分又称为<strong>第二类曲线积分</strong>，用于计算变力在曲线弧上所做的功.</p>
+<p>设变力 $\boldsymbol{F}(x,y)&#x3D;P(x,y)\boldsymbol{i}+Q(x,y)\boldsymbol{j}$，则根据积分思想，其在 $x$ 轴和 $y$ 轴方向上做的功分别为</p>
+<p>$$<br>\begin{cases}<br>    \displaystyle\int _LP(x,y)\text{d}x&#x3D;\lim\limits _{\lambda\to 0}\sum\limits _{i&#x3D;1}^nP(\xi _i,\eta _i)\Delta x _i\\\\<br>    \displaystyle\int _LQ(x,y)\text{d}y&#x3D;\lim\limits _{\lambda\to 0}\sum\limits _{i&#x3D;1}^nQ(\xi _i,\eta _i)\Delta y _i<br>\end{cases}<br>$$</p>
+<p>故总功为 $\displaystyle W&#x3D;\int _LP(x,y)\text{d}x+\int _LQ(x,y)\text{d}y$，而该结果可简记为</p>
+<p>$$<br>\displaystyle\int _LP(x,y)\text{d}x+Q(x,y)\text{d}y<br>$$</p>
+<p>或可写为向量形式</p>
+<p>$$<br>\displaystyle\int _L\boldsymbol{F}(x,y)\cdot\text{d}\boldsymbol{r}<br>$$</p>
+<p>其中圆点表示的是数量积运算，且 $\text{d}\boldsymbol{r}&#x3D;\text{d}x\boldsymbol{i}+\text{d}y\boldsymbol{j}$.</p>
+<p>设 $L$ 是有向光滑曲线弧，$L^-$ 是 $L$ 的反向曲线弧，则</p>
+<p>$$<br>\displaystyle\int _{L^-}\boldsymbol{F}(x,y)\cdot\text{d}\boldsymbol{r}&#x3D;-\int _L\boldsymbol{F}(x,y)\cdot\text{d}\boldsymbol{r}<br>$$</p>
+<p>设 $P(x,y)$ 和 $Q(x,y)$ 在<strong>有向</strong>曲线弧 $L$ 上有定义且连续，而 $L$ 的参数方程为</p>
+<p>$$<br>\begin{cases}<br>    x&#x3D;\varphi(t)\\\\<br>    y&#x3D;\psi(t)<br>\end{cases}<br>$$</p>
+<p>当 $t$ 单调地由 $\alpha$ 变化到 $\beta$ 时，点 $M(x,y)$ 从 $L$ 的起点沿 $L$ 运动至终点 $B$，其余条件与第一类曲线积分的要求相同，则有</p>
+<p>$$<br>\displaystyle\int _LP(x,y)\text{d}x+Q(x,y)\text{d}y&#x3D;\int _\alpha^\beta\{\,P[\,\varphi(t),\psi(t)\,]\cdot\varphi&#39;(t)+Q[\,\varphi(t),\psi(t)\,]\cdot\psi&#39;(t)\,\}\text{d}t<br>$$</p>
+<blockquote>
+<p>注意，上述公式<strong>并不要求</strong> $\alpha&lt;\beta$，只需要 $t&#x3D;\alpha$ 时对应 $L$ 的起点、$t&#x3D;\beta$ 时对应 $L$ 的终点即可.</p>
+</blockquote>
+<h3 id="两类曲线积分的联系"><a href="#两类曲线积分的联系" class="headerlink" title="两类曲线积分的联系"></a>两类曲线积分的联系</h3><p>对于平面曲线弧 $L$，有</p>
+<p>$$<br>\displaystyle\int _LP\text{d}x+Q\text{d}y&#x3D;\int _L(P\cos\alpha+Q\cos\beta)\text{d}s<br>$$</p>
+<p>其中 $\alpha(x,y)$ 和 $\beta(x,y)$ 为<strong>有向</strong>曲线弧 $L$ 在点 $(x,y)$ 处的切向量的方向角.</p>
+<h3 id="格林公式"><a href="#格林公式" class="headerlink" title="格林公式"></a>格林公式</h3><p>格林公式与牛顿 – 莱布尼茨公式的相通点在于：</p>
+<ol>
+<li>牛顿 – 莱布尼茨公式将一重积分的计算重心从原先的<strong>全积分区间段</strong>转移至<strong>区间端点</strong>上；</li>
+<li>格林公式将二重积分的计算重心从原先的<strong>全积分区域</strong>转移至<strong>区域边界曲线</strong>上.</li>
+</ol>
+<p>设 $D$ 为平面区域，若 $D$ 内任意一条闭曲线所围成的部分均属于 $D$，则称其为平面<strong>单连通区域</strong>，否则称为<strong>复连通区域</strong>.</p>
+<p>对于平面区域 $D$ 的边界曲线 $L$，当观察者沿之行走时，若 $D$ 的内点始终位于其<strong>左侧</strong>，则称当前方向为 $L$ 的<strong>正方向</strong>.</p>
+<blockquote>
+<p>从图形上看：</p>
+<ol>
+<li>单连通区域是不含有“洞”和“点洞”的；</li>
+<li>区域最外层曲线的正方向是<strong>逆时针</strong>的，而内层曲线（对复连通区域而言即为“洞”的边界曲线）的正方向是<strong>顺时针</strong>的.</li>
+</ol>
+</blockquote>
+<p>设闭区域 $D$ 由分段光滑的曲线 $L$ 围成，若函数 $P(x,y)$ 和 $Q(x,y)$ 在 $D$ 上具有一阶连续偏导数，则有</p>
+<p>$$<br>\displaystyle\iint\limits _D\left(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y}\right)\text{d}x\text{d}y&#x3D;\oint _LP\text{d}x+Q\text{d}y<br>$$</p>
+<p>其中 $L$ 是 $D$ 取正方向时的边界曲线.</p>
+<p>若取 $P&#x3D;-x$，$Q&#x3D;x$，则有</p>
+<p>$$<br>\displaystyle 2\iint\limits _D\text{d}x\text{d}y&#x3D;\oint _Lx\text{d}y-y\text{d}x<br>$$</p>
+<p>显然，上式左端是平面闭区域 $D$ 面积的两倍，故有</p>
+<p>$$<br>A&#x3D;\dfrac{1}{2}\oint _Lx\text{d}y-y\text{d}x<br>$$</p>
+<p><strong>下面的例题给出了格林公式在复连通区域上的应用过程，以及曲线围成区域内有未定义点的处理方式.</strong></p>
+<blockquote>
+<p>例：计算 $\displaystyle\oint _L\dfrac{x\text{d}y-y\text{d}x}{x^2+y^2}$ 的值，其中 $L$ 为一条无重点、分段光滑且不经过原点的连续闭曲线，方向为正.</p>
+<p>解：由题意，令 $P&#x3D;-\dfrac{-y}{x^2+y^2}$，$Q&#x3D;\dfrac{x}{x^2+y^2}$，有</p>
+<p>$$<br>\dfrac{\partial Q}{\partial x}&#x3D;\dfrac{y^2-x^2}{(x^2+y^2)^2}&#x3D;\dfrac{\partial P}{\partial y}<br>$$</p>
+<p>记 $L$ 所围成的闭区域为 $D$.</p>
+<p>当 $(0,0)\notin D$ 时，由格林公式有</p>
+<p>$$<br>\displaystyle\oint _L\dfrac{x\text{d}y-y\text{d}x}{x^2+y^2}&#x3D;\iint\limits _D\left(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y}\right)\text{d}x\text{d}y&#x3D;0<br>$$</p>
+<p>当 $(0,0)\in D$ 时，选取适当小的 $r&gt;0$，作位于 $D$ 内的圆周 $l:\,x^2+y^2&#x3D;r^2$，设其与 $L$ 围成的闭区域使用格林公式，有</p>
+<p>$$<br>\displaystyle\oint _{L}\dfrac{x\text{d}y-y\text{d}x}{x^2+y^2}+\displaystyle\oint _{l^+}\dfrac{x\text{d}y-y\text{d}x}{x^2+y^2}&#x3D;0<br>$$</p>
+<p>其中 $l^+$ 表示 $l$ 的正方向，此时取 $l$ 的方向为负，有</p>
+<p>$$<br>\begin{aligned}<br>   \displaystyle\oint _{L}\dfrac{x\text{d}y-y\text{d}x}{x^2+y^2}&amp;&#x3D;\displaystyle\oint _l\dfrac{x\text{d}y-y\text{d}x}{x^2+y^2}\\\\<br>   &amp;&#x3D;\oint _l\dfrac{r\cos\theta\text{d}(r\sin\theta)-r\sin\theta\text{d}(r\cos\theta)}{r^2}\\\\<br>   &amp;&#x3D;\int _0^{2\pi}(\cos^2\theta+\sin^2\theta)\text{d}\theta\\\\<br>   &amp;&#x3D;2\pi<br>\end{aligned}<br>$$</p>
+</blockquote>
+<h3 id="对面积的曲面积分"><a href="#对面积的曲面积分" class="headerlink" title="对面积的曲面积分"></a>对面积的曲面积分</h3><p>对面积的曲面积分又称为<strong>第一类曲面积分</strong>，用于计算面密度为变量的曲面的质量.</p>
+<p>设曲面 $\varSigma$ 在点 $(x,y,z)$ 处的面密度为 $f(x,y,z)$，则根据积分思想，其质量为</p>
+<p>$$<br>\displaystyle\iint\limits _\varSigma f(x,y,z)\text{d}S&#x3D;\lim\limits _{\lambda\to 0}f(\xi _i,\eta _i,\zeta _i)\Delta S _i<br>$$</p>
+<p>其中 $\lambda$ 为各小曲面的直径的最大值.</p>
+<p>若曲面 $\varSigma$ 可分为两片光滑曲面 $\varSigma _1$ 和 $\varSigma _2$，则有</p>
+<p>$$<br>\displaystyle\iint\limits _\varSigma f(x,y,z)\text{d}S&#x3D;\iint\limits _{\varSigma _1} f(x,y,z)\text{d}S+\iint\limits _{\varSigma _2} f(x,y,z)\text{d}S<br>$$</p>
+<p>设积分曲面 $\varSigma:\,z&#x3D;z(x,y)$ 在平面 $xOy$ 上的投影为 $D _{xy}$，且 $z(x,y)$ 在 $D _{xy}$ 上具有连续偏导数，而 $f(x,y,z)$ 在 $\varSigma$ 上连续，则有</p>
+<p>$$<br>\displaystyle\iint\limits _{\varSigma}f(x,y,z)\text{d}S&#x3D;\iint\limits _{D _{xy}}f[\,x,y,z(x,y)\,]\cdot\sqrt{1+[\,z _x&#39;(x,y)\,]^2+[\,z _y&#39;(x,y)\,]^2}\text{d}x\text{d}y<br>$$</p>
+<blockquote>
+<p>例：计算 $\displaystyle\iint\limits _{\varSigma}\dfrac{\text{d}S}{z}$ 的值，其中 $\varSigma$ 为球面 $x^2+y^2+z^2&#x3D;a^2$ 被平面 $z&#x3D;h$（$0&lt;h&lt;a$）截得的顶部.</p>
+<p>解：$\varSigma$ 的方程为 $z&#x3D;\sqrt{a^2-x^2-y^2}$，其在平面 $xOy$ 上的投影区域为</p>
+<p>$$<br>D _{xy}&#x3D;\{\,(x,y)\,|\,x^2+y^2\leqslant a^2-h^2\,\}<br>$$</p>
+<p>故</p>
+<p>$$<br>\begin{aligned}<br>   \displaystyle\iint\limits _{\varSigma}\dfrac{\text{d}S}{z}&amp;&#x3D;\iint\limits _{D _{xy}}\dfrac{\sqrt{1+\dfrac{x^2}{a^2-x^2-y^2}+\dfrac{y^2}{a^2-x^2-y^2}}}{\sqrt{a^2-x^2-y^2}}\text{d}x\text{d}y\\\\<br>   &amp;&#x3D;\iint\limits _{D _{xy}}\dfrac{a}{a^2-x^2-y^2}\text{d}x\text{d}y\\\\<br>   &amp;&#x3D;a\int _0^{2\pi}\text{d}\theta\int _0^{\sqrt{a^2-\rho^2}}\dfrac{\rho\text{d}\rho}{a^2-\rho^2}\\\\<br>   &amp;&#x3D;2\pi a\ln\dfrac{a}{h}<br>\end{aligned}<br>$$</p>
+</blockquote>
+<p>若在计算第一类曲面积分的过程中使用<strong>球面坐标</strong>以简化计算，由于</p>
+<p>$$<br>\text{d}v&#x3D;r^2\sin\varphi\text{d}r\text{d}\varphi\text{d}\theta<br>$$</p>
+<p>其中 $\text{d}r$ 是小长方体的高，故有</p>
+<p>$$<br>\text{d}S&#x3D;r^2\sin\varphi\text{d}\varphi\text{d}\theta<br>$$</p>
+<blockquote>
+<p>关于投影问题，需要注意以下两点：</p>
+<ol>
+<li>若曲面在某个平面上投影面积为零，则不能在该面上投影；</li>
+<li>对由多个光滑曲面构成的闭曲面而言，若两片子曲面的投影区域有所重叠，则应分片单独计算.</li>
+</ol>
+</blockquote>
+<p>若积分曲面 $\varSigma$ 关于平面 $xOy$ 对称，则有</p>
+<p>$$<br>\displaystyle\iint\limits _\varSigma f(x,y,z)\text{d}S&#x3D;<br>\begin{cases}<br>    2\displaystyle\iint\limits _{\varSigma _{z\geqslant 0}}f(x,y,z)\text{d}S,&amp; &amp;f(x,y,z)\,\text{关于}\,z\,\text{为}\textbf{偶函数}\\\\<br>    0,&amp; &amp;f(x,y,z)\,\text{关于}\,z\,\text{为}\textbf{奇函数}<br>\end{cases}<br>$$</p>
+<h3 id="对坐标的曲面积分"><a href="#对坐标的曲面积分" class="headerlink" title="对坐标的曲面积分"></a>对坐标的曲面积分</h3><h4 id="曲面的侧"><a href="#曲面的侧" class="headerlink" title="曲面的侧"></a>曲面的侧</h4><p>日常生活中，我们所遇到的多数曲面都是<strong>双侧</strong>的，如外侧与内侧、上侧与下侧等.</p>
+<p>曲面的侧由其法向量选定，并按以下步骤规定曲面在平面 $xOy$ 上的投影方向：</p>
+<ol>
+<li>设 $\varSigma$ 为有向光滑曲面，在其上取一小块曲面 $\Delta S$，并将之投影至平面 $xOy$ 上，记该投影区域的面积为 $(\Delta\sigma) _{xy}$；</li>
+<li>若 $\Delta S$ 上各点处的法向量与 $z$ 轴夹角 $\gamma$ 的余弦值 $\cos\gamma$ 的符号均相同，则其在平面 $xOy$ 上的投影 $(\Delta S) _{xy}$ 为<br>$$<br>(\Delta S) _{xy}&#x3D;<br>\begin{cases}<br>(\Delta\sigma) _{xy},&amp; &amp;\cos\gamma&gt;0\\\\<br>-(\Delta\sigma) _{xy},&amp; &amp;\cos\gamma&lt;0\\\\<br>0,&amp; &amp;\cos\gamma\equiv 0<br>\end{cases}<br>$$</li>
+</ol>
+<p>在平面 $yOz$ 与平面 $xOz$ 上的投影方向定义与之同理.</p>
+<blockquote>
+<p>侧的方向与投影方向的关系为“<strong>上正下负，前正后负，右正左负</strong>”.</p>
+</blockquote>
+<h4 id="定义与计算方法"><a href="#定义与计算方法" class="headerlink" title="定义与计算方法"></a>定义与计算方法</h4><p>对坐标的曲面积分又称为<strong>第二类曲面积分</strong>，用于计算密度为 $1$ 的变速流体在单位时间内流经某曲面的流量.</p>
+<p>类似于第二类曲线积分，设流体的流速为 $\boldsymbol{v}(x,y,z)&#x3D;P(x,y,z)\boldsymbol{i}+Q(x,y,z)\boldsymbol{j}+R(x,y,z)\boldsymbol{k}$，则其在单位时间内的流量为</p>
+<p>$$<br>\displaystyle\iint\limits _\varSigma P(x,y,z)\text{d}y\text{d}z+Q(x,y,z)\text{d}z\text{d}x+R(x,y,z)\text{d}x\text{d}y<br>$$</p>
+<p>其中</p>
+<p>$$<br>\begin{cases}<br>    \displaystyle\iint\limits _\varSigma P(x,y,z)\text{d}y\text{d}z&#x3D;\lim\limits _{\lambda\to 0}\sum\limits _{i&#x3D;1}^nP(\xi _i,\eta _i,\zeta _i)(\Delta S _i) _{yz}\\\\<br>    \displaystyle\iint\limits _\varSigma Q(x,y,z)\text{d}x\text{d}y&#x3D;\lim\limits _{\lambda\to 0}\sum\limits _{i&#x3D;1}^nQ(\xi _i,\eta _i,\zeta _i)(\Delta S _i) _{zx}\\\\<br>    \displaystyle\iint\limits _\varSigma R(x,y,z)\text{d}x\text{d}y&#x3D;\lim\limits _{\lambda\to 0}\sum\limits _{i&#x3D;1}^nR(\xi _i,\eta _i,\zeta _i)(\Delta S _i) _{xy}<br>\end{cases}<br>$$</p>
+<p>设 $\varSigma$ 为有向曲面，$\varSigma ^-$ 表示与 $\varSigma$ 取相反侧的有向曲面，以在平面 $xOy$ 上的投影为例，有</p>
+<p>$$<br>\displaystyle\iint\limits _{\varSigma^-} R(x,y,z)\text{d}x\text{d}y&#x3D;-\iint\limits _\varSigma R(x,y,z)\text{d}x\text{d}y<br>$$</p>
+<p>若积分曲面 $\varSigma:\,z&#x3D;z(x,y)$ 在平面 $xOy$ 上的投影区域为 $D _{xy}$，且 $z(x,y)$ 在 $D _{xy}$ 上具有一阶连续偏导数，$R(x,y,z)$ 在 $\varSigma$ 上连续，则</p>
+<p>$$<br>\displaystyle\iint\limits _{\varSigma}R(x,y,z)\text{d}x\text{d}y&#x3D;\pm\iint\limits _{D _{xy}}R[\,x,y,z(x,y)\,]\text{d}x\text{d}y<br>$$</p>
+<p>同理可计算 $\displaystyle\iint\limits _\varSigma P(x,y,z)\text{d}y\text{d}z$ 和 $\displaystyle\iint\limits _\varSigma Q(x,y,z)\text{d}x\text{d}y$，而上式中正负号的选择仍由“<strong>上正下负，前正后负，右正左负</strong>”决定.</p>
+<p>若积分曲面 $\varSigma$ 关于平面 $xOy$ 对称，则有</p>
+<p>$$<br>\displaystyle\iint\limits _\varSigma f(x,y,z)\text{d}x\text{d}y&#x3D;<br>\begin{cases}<br>    2\displaystyle\iint\limits _{\varSigma _{z\geqslant 0}}f(x,y,z)\text{d}x\text{d}y,&amp; &amp;f(x,y,z)\,\text{关于}\,z\,\text{为}\textbf{奇函数}\\\\<br>    0,&amp; &amp;f(x,y,z)\,\text{关于}\,z\,\text{为}\textbf{偶函数}<br>\end{cases}<br>$$</p>
+<blockquote>
+<p>注意，第二类曲面积分的奇偶性对称结论与第一类曲面积分相应者是<strong>相反的</strong>.</p>
+</blockquote>
+<p>在<strong>两类曲面积分</strong>中，若 $\varSigma$ 的方程或积分函数满足<strong>轮换性质</strong>，则优先考虑通过轮换计算.</p>
+<blockquote>
+<p>例：计算 $\displaystyle I&#x3D;\iint\limits _\varSigma\dfrac{2\text{d}y\text{d}z}{x\cos^2x}+\dfrac{\text{d}z\text{d}x}{\cos^2y}-\dfrac{\text{d}x\text{d}y}{z\cos^2z}$ 的值，其中 $\varSigma$ 为球面 $x^2+y^2+z^2&#x3D;1$ 的外侧.</p>
+<p>解：由于 $\varSigma$ 的方程具有轮换对称性，则有</p>
+<p>$$<br>\begin{cases}<br>   \dfrac{2\text{d}y\text{d}z}{x\cos^2x}&#x3D;\dfrac{2\text{d}z\text{d}x}{y\cos^2y}&#x3D;\dfrac{2\text{d}x\text{d}y}{z\cos^2z}\\\\<br>   \dfrac{\text{d}z\text{d}x}{\cos^2y}&#x3D;\dfrac{\text{d}x\text{d}y}{\cos^2z}<br>\end{cases}<br>$$</p>
+<p>而该球面的外侧关于平面 $xOy$ 对称，且 $f(z)&#x3D;\dfrac{1}{\cos^2z}$ 关于 $z$ 为偶函数，故 $\dfrac{\text{d}z\text{d}x}{\cos^2y}&#x3D;\dfrac{\text{d}x\text{d}y}{\cos^2z}&#x3D;0$，即</p>
+<p>$$<br>\begin{aligned}<br>   \displaystyle I&amp;&#x3D;\iint\limits _\varSigma\dfrac{2\text{d}x\text{d}y}{z\cos^2z}-\dfrac{\text{d}x\text{d}y}{z\cos^2z}+0&#x3D;2\iint\limits _{\varSigma _{z\geqslant 0}}\dfrac{\text{d}x\text{d}y}{z\cos^2z}\\\\<br>   &amp;&#x3D;2\iint\limits _{x^2+y^2\leqslant 1}\dfrac{\sqrt{1-x^2-y^2}\cos^2\sqrt{1-x^2-y^2}}{\text{d}x\text{d}y}\\\\<br>   &amp;&#x3D;2\int _0^{2\pi}\text{d}\theta\int _0^1\dfrac{\rho\text{d}\rho}{\sqrt{1-\rho^2}\cos^2\sqrt{1-\rho^2}}\\\\<br>   &amp;&#x3D;-4\pi\int _0^1\dfrac{\text{d}\sqrt{1-\rho^2}}{\cos^2\sqrt{1-\rho^2}}\\\\<br>   &amp;&#x3D;\left.-4\pi\cdot\tan\sqrt{1-\rho^2}\,\right| _0^1\\\\<br>   &amp;&#x3D;4\pi\tan 1<br>\end{aligned}<br>$$</p>
+</blockquote>
+<h3 id="两类曲面积分的联系"><a href="#两类曲面积分的联系" class="headerlink" title="两类曲面积分的联系"></a>两类曲面积分的联系</h3><p>对于曲面 $\varSigma$，有</p>
+<p>$$<br>\displaystyle\iint\limits _\varSigma P\text{d}y\text{d}z+Q\text{d}z\text{d}x+R\text{d}x\text{d}y&#x3D;\iint\limits _\varSigma(P\cos\alpha+Q\cos\beta+R\cos\gamma)\text{d}S<br>$$</p>
+<p>其中 $(\cos\alpha,\cos\beta,\cos\gamma)$ 是<strong>有向曲面</strong> $\varSigma$ 在点 $(x,y,z)$ 处的法向量的方向余弦.</p>
+<h3 id="高斯公式"><a href="#高斯公式" class="headerlink" title="高斯公式"></a>高斯公式</h3><p>高斯公式与格林公式的相通点在于：</p>
+<ol>
+<li>格林公式将二重积分的计算转化为对<strong>区域边界曲线上的第二类曲线积分</strong>的计算；</li>
+<li>高斯公式将三重积分的计算转化为对<strong>区域边界曲面上的第二类曲面积分</strong>的计算.</li>
+</ol>
+<p>设空间闭区域 $\varOmega$ 由分片光滑的闭曲面 $\varSigma$ 所围成，若函数 $P(x,y,z),\,Q(x,y,z),\,R(x,y,z)$ 在 $\varOmega$ 上具有一阶连续偏导数，则有</p>
+<p>$$<br>\newcommand{\oiint}{\iint\hspace{-1.545em}{\subset\hspace{-0.2em}\supset}\,\,}<br>$$</p>
+<p>$$<br>\displaystyle\iiint\limits _\varOmega\left(\dfrac{\partial P}{\partial x}+\dfrac{\partial Q}{\partial y}+\dfrac{\partial R}{\partial z}\right)\text{d}v&#x3D;\mathop{\oiint}\limits _{\varSigma\,\,\,\,\,} P\text{d}y\text{d}z+Q\text{d}z\text{d}x+R\text{d}x\text{d}y<br>$$</p>
+<h3 id="斯托克斯公式"><a href="#斯托克斯公式" class="headerlink" title="斯托克斯公式"></a>斯托克斯公式</h3><p>斯托克斯公式可视为是格林公式的推广，其揭示了第二类曲线积分与第二类曲面积分之间的关系.</p>
+<p><strong>右手规则</strong>：当右手大拇指的指向为有向曲面 $\varSigma$ 的法向量方向时，其余四指沿 $\varGamma$ 的指向为边界曲线 $\varGamma$ 的正方向.</p>
+<p>设有以下条件成立：</p>
+<ol>
+<li>$\varGamma$ 为分段光滑的空间有向闭曲线，$\varSigma$ 是以 $\varGamma$ 为边界的分片光滑的有向曲面；</li>
+<li>$\varGamma$ 的正向与 $\varSigma$ 的侧满足右手规则；</li>
+<li>函数 $P(x,y,z),\,Q(x,y,z),\,R(x,y,z)$ 在 $\varSigma$ 与 $\varGamma$ 上具有一阶连续偏导数；</li>
+<li>视 $\dfrac{\partial R}{\partial x}$ 为 $\dfrac{\partial}{\partial x}$ 与 $R$ 的“积”，以此类推.</li>
+</ol>
+<p>则有</p>
+<p>$$<br>\iint\limits _\varSigma\,\,\left|\;\begin{matrix}<br>    \text{d}y\text{d}z &amp; \text{d}z\text{d}x &amp;\text{d}x\text{d}y \\\\<br>    \dfrac{\partial}{\partial x} &amp; \dfrac{\partial}{\partial y} &amp; \dfrac{\partial}{\partial z} \\\\<br>    P &amp; Q &amp; R<br>\end{matrix}\;\right|&#x3D;\oint _\varGamma P\text{d}x+Q\text{d}y+R\text{d}z<br>$$</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>积分学概论</p><p><a href="http://blog.kksk.tech/2024/02/09/积分学概论/">http://blog.kksk.tech/2024/02/09/积分学概论/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>KoSaking</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2024-02-09</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2024-10-28</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i> </a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i> </a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i> </a></p></div></div></div></div></div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted" rel="tag" href="/tags/math/">math, </a><a class="link-muted" rel="tag" href="/tags/function/">function, </a><a class="link-muted" rel="tag" href="/tags/derivative/">derivative, </a><a class="link-muted" rel="tag" href="/tags/differential/">differential, </a><a class="link-muted" rel="tag" href="/tags/integral/">integral </a></div></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2024/02/09/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8E%E6%9D%82%E8%AE%BA/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">高等数学基础与杂论</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2024/02/09/%E5%BE%AE%E5%88%86%E5%AD%A6%E6%A6%82%E8%AE%BA/"><span class="level-item">微分学概论</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level" style="margin-bottom:1rem"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="KoSaking"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">KoSaking</p><p class="is-size-6 is-block">kosaking0715@outlook.com</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Hong Kong SAR, China</span></p></div></div></nav><nav class="level menu-list is-mobile" style="margin-bottom:1rem"><a class="level-item has-text-centered is-marginless" href="/archives/"><div><p class="heading">Posts</p><div><p class="title">8</p></div></div></a><a class="level-item has-text-centered is-marginless" href="/categories/"><div><p class="heading">Categories</p><div><p class="title">3</p></div></div></a><a class="level-item has-text-centered is-marginless" href="/tags/"><div><p class="heading">Tags</p><div><p class="title">11</p></div></div></a></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Clay-KoSaking" target="_blank" rel="noopener"><i class="fab fa-github"></i>  Follow</a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#不定积分"><span class="level-left"><span class="level-item">1</span><span class="level-item">不定积分</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#不定积分的性质与积分表"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">不定积分的性质与积分表</span></span></a></li><li><a class="level is-mobile" href="#第一类换元积分法"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">第一类换元积分法</span></span></a></li><li><a class="level is-mobile" href="#第二类换元积分法"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">第二类换元积分法</span></span></a></li><li><a class="level is-mobile" href="#分部积分法"><span class="level-left"><span class="level-item">1.4</span><span class="level-item">分部积分法</span></span></a></li><li><a class="level is-mobile" href="#有理函数的积分"><span class="level-left"><span class="level-item">1.5</span><span class="level-item">有理函数的积分</span></span></a></li></ul></li><li><a class="level is-mobile" href="#定积分"><span class="level-left"><span class="level-item">2</span><span class="level-item">定积分</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#定积分的概念与性质"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">定积分的概念与性质</span></span></a></li><li><a class="level is-mobile" href="#积分变限函数"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">积分变限函数</span></span></a></li><li><a class="level is-mobile" href="#定积分的换元法"><span class="level-left"><span class="level-item">2.3</span><span class="level-item">定积分的换元法</span></span></a></li><li><a class="level is-mobile" href="#定积分的分部积分法"><span class="level-left"><span class="level-item">2.4</span><span class="level-item">定积分的分部积分法</span></span></a></li><li><a class="level is-mobile" href="#反常积分"><span class="level-left"><span class="level-item">2.5</span><span class="level-item">反常积分</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#无穷限的反常积分"><span class="level-left"><span class="level-item">2.5.1</span><span class="level-item">无穷限的反常积分</span></span></a></li><li><a class="level is-mobile" href="#无界函数的反常积分"><span class="level-left"><span class="level-item">2.5.2</span><span class="level-item">无界函数的反常积分</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#定积分的应用"><span class="level-left"><span class="level-item">3</span><span class="level-item">定积分的应用</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#平面图形的面积"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">平面图形的面积</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#直角坐标系情况"><span class="level-left"><span class="level-item">3.1.1</span><span class="level-item">直角坐标系情况</span></span></a></li><li><a class="level is-mobile" href="#极坐标系情况"><span class="level-left"><span class="level-item">3.1.2</span><span class="level-item">极坐标系情况</span></span></a></li></ul></li><li><a class="level is-mobile" href="#旋转体的体积"><span class="level-left"><span class="level-item">3.2</span><span class="level-item">旋转体的体积</span></span></a></li><li><a class="level is-mobile" href="#截面面积已知的立体的体积"><span class="level-left"><span class="level-item">3.3</span><span class="level-item">截面面积已知的立体的体积</span></span></a></li><li><a class="level is-mobile" href="#平面曲线的弧长"><span class="level-left"><span class="level-item">3.4</span><span class="level-item">平面曲线的弧长</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#参数方程情况"><span class="level-left"><span class="level-item">3.4.1</span><span class="level-item">参数方程情况</span></span></a></li><li><a class="level is-mobile" href="#直角坐标系情况-1"><span class="level-left"><span class="level-item">3.4.2</span><span class="level-item">直角坐标系情况</span></span></a></li><li><a class="level is-mobile" href="#极坐标系情况-1"><span class="level-left"><span class="level-item">3.4.3</span><span class="level-item">极坐标系情况</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#重积分"><span class="level-left"><span class="level-item">4</span><span class="level-item">重积分</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#二重积分的性质"><span class="level-left"><span class="level-item">4.1</span><span class="level-item">二重积分的性质</span></span></a></li><li><a class="level is-mobile" href="#二重积分的计算"><span class="level-left"><span class="level-item">4.2</span><span class="level-item">二重积分的计算</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#直角坐标系情况-2"><span class="level-left"><span class="level-item">4.2.1</span><span class="level-item">直角坐标系情况</span></span></a></li><li><a class="level is-mobile" href="#极坐标情况"><span class="level-left"><span class="level-item">4.2.2</span><span class="level-item">极坐标情况</span></span></a></li></ul></li><li><a class="level is-mobile" href="#三重积分的计算"><span class="level-left"><span class="level-item">4.3</span><span class="level-item">三重积分的计算</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#直角坐标系情况-3"><span class="level-left"><span class="level-item">4.3.1</span><span class="level-item">直角坐标系情况</span></span></a></li><li><a class="level is-mobile" href="#柱面坐标情况"><span class="level-left"><span class="level-item">4.3.2</span><span class="level-item">柱面坐标情况</span></span></a></li><li><a class="level is-mobile" href="#球面坐标情况"><span class="level-left"><span class="level-item">4.3.3</span><span class="level-item">球面坐标情况</span></span></a></li></ul></li><li><a class="level is-mobile" href="#重积分的应用"><span class="level-left"><span class="level-item">4.4</span><span class="level-item">重积分的应用</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#曲面的面积"><span class="level-left"><span class="level-item">4.4.1</span><span class="level-item">曲面的面积</span></span></a></li><li><a class="level is-mobile" href="#质心"><span class="level-left"><span class="level-item">4.4.2</span><span class="level-item">质心</span></span></a></li><li><a class="level is-mobile" href="#转动惯量"><span class="level-left"><span class="level-item">4.4.3</span><span class="level-item">转动惯量</span></span></a></li><li><a class="level is-mobile" href="#引力"><span class="level-left"><span class="level-item">4.4.4</span><span class="level-item">引力</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#曲线积分与曲面积分"><span class="level-left"><span class="level-item">5</span><span class="level-item">曲线积分与曲面积分</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#对弧长的曲线积分"><span class="level-left"><span class="level-item">5.1</span><span class="level-item">对弧长的曲线积分</span></span></a></li><li><a class="level is-mobile" href="#对坐标的曲线积分"><span class="level-left"><span class="level-item">5.2</span><span class="level-item">对坐标的曲线积分</span></span></a></li><li><a class="level is-mobile" href="#两类曲线积分的联系"><span class="level-left"><span class="level-item">5.3</span><span class="level-item">两类曲线积分的联系</span></span></a></li><li><a class="level is-mobile" href="#格林公式"><span class="level-left"><span class="level-item">5.4</span><span class="level-item">格林公式</span></span></a></li><li><a class="level is-mobile" href="#对面积的曲面积分"><span class="level-left"><span class="level-item">5.5</span><span class="level-item">对面积的曲面积分</span></span></a></li><li><a class="level is-mobile" href="#对坐标的曲面积分"><span class="level-left"><span class="level-item">5.6</span><span class="level-item">对坐标的曲面积分</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#曲面的侧"><span class="level-left"><span class="level-item">5.6.1</span><span class="level-item">曲面的侧</span></span></a></li><li><a class="level is-mobile" href="#定义与计算方法"><span class="level-left"><span class="level-item">5.6.2</span><span class="level-item">定义与计算方法</span></span></a></li></ul></li><li><a class="level is-mobile" href="#两类曲面积分的联系"><span class="level-left"><span class="level-item">5.7</span><span class="level-item">两类曲面积分的联系</span></span></a></li><li><a class="level is-mobile" href="#高斯公式"><span class="level-left"><span class="level-item">5.8</span><span class="level-item">高斯公式</span></span></a></li><li><a class="level is-mobile" href="#斯托克斯公式"><span class="level-left"><span class="level-item">5.9</span><span class="level-item">斯托克斯公式</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img class="logo-img" src="/img/logo.svg" alt="KoSaking&#039;s blog" height="28"><img class="logo-img-dark" src="/img/logo-dark.svg" alt="KoSaking&#039;s blog" height="28"></a><p class="is-size-7"><span>&copy; 2024 KoSaking</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mhchem.min.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><script src="/js/night.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script><script type="text/javascript" src="/js/universe.js"></script></body></html>
